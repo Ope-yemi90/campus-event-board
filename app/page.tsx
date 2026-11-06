@@ -1,4 +1,5 @@
 import { events, type EventCategory } from "./data/events";
+import Navbar from "./components/Navbar";
 
 const categoryStyles: Record<EventCategory, string> = {
   Tech: "bg-blue-50 text-blue-700 ring-blue-600/15",
@@ -20,19 +21,7 @@ function formatEventDate(date: string) {
 export default function Home() {
   return (
     <main className="min-h-screen bg-stone-50 text-slate-900">
-      <header className="border-b border-slate-200/80 bg-white">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
-          <a href="#home" className="flex items-center gap-3" aria-label="Campus Events home">
-            <span className="grid size-10 place-items-center rounded-xl bg-indigo-600 text-lg font-bold text-white shadow-sm">
-              C
-            </span>
-            <span className="text-lg font-bold tracking-tight">Campus Events</span>
-          </a>
-          <span className="hidden text-sm font-medium text-slate-500 sm:inline">
-            Find your next campus moment
-          </span>
-        </div>
-      </header>
+      <Navbar />
 
       <section id="home" className="mx-auto max-w-7xl px-5 pb-16 pt-12 sm:px-8 sm:pt-16">
         <div className="mb-9 max-w-2xl">
