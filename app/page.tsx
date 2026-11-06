@@ -69,7 +69,8 @@ export default function Home() {
           </span>
         </div>
 
-        <label className="mb-6 block">
+        <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-end">
+        <label className="block min-w-0 flex-1">
           <span className="sr-only">Search events by title</span>
           <span className="relative block">
             <span aria-hidden="true" className="pointer-events-none absolute inset-y-0 left-4 flex items-center text-slate-400">
@@ -80,22 +81,23 @@ export default function Home() {
               value={searchTerm}
               onChange={(event) => setSearchTerm(event.target.value)}
               placeholder="Search events by title..."
-              className="w-full rounded-xl border border-slate-200 bg-white py-3 pl-11 pr-4 text-sm text-slate-900 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-indigo-400 focus:ring-4 focus:ring-indigo-100 sm:max-w-lg"
+              className="w-full rounded-xl border border-slate-200 bg-white py-3 pl-11 pr-4 text-sm text-slate-900 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-indigo-400 focus:ring-4 focus:ring-indigo-100"
             />
           </span>
         </label>
 
-        <label className="mb-5 block w-full sm:w-fit">
+        <label className="block w-full shrink-0 sm:w-56">
           <span className="mb-1.5 block text-sm font-medium text-slate-600">Sort by Date</span>
           <select
             value={dateSortOrder}
             onChange={(event) => setDateSortOrder(event.target.value as DateSortOrder)}
-            className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 shadow-sm outline-none transition focus:border-indigo-400 focus:ring-4 focus:ring-indigo-100 sm:min-w-56"
+            className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 shadow-sm outline-none transition focus:border-indigo-400 focus:ring-4 focus:ring-indigo-100"
           >
             <option value="earliest">Earliest to latest</option>
             <option value="latest">Latest to earliest</option>
           </select>
         </label>
+        </div>
 
         <div className="mb-6 flex flex-wrap items-center gap-2" aria-label="Filter events by category">
           <span className="mr-1 text-sm font-medium text-slate-600">Category:</span>
