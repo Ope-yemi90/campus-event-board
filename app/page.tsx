@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { events, type EventCategory } from "./data/events";
 import Navbar from "./components/Navbar";
 
@@ -19,6 +22,12 @@ function formatEventDate(date: string) {
 }
 
 export default function Home() {
+  const [searchTerm, setSearchTerm] = useState("");
+  const normalizedSearchTerm = searchTerm.trim().toLowerCase();
+  const filteredEvents = events.filter((event) =>
+    event.title.toLowerCase().includes(normalizedSearchTerm),
+  );
+
   return (
     <main className="min-h-screen bg-stone-50 text-slate-900">
       <Navbar />
@@ -43,12 +52,29 @@ export default function Home() {
             <p className="mt-1 text-sm text-slate-500">A little something to add to your calendar.</p>
           </div>
           <span className="rounded-full bg-white px-3 py-1.5 text-sm font-medium text-slate-600 ring-1 ring-slate-200">
-            {events.length} events
+            {filteredEvents.length} {filteredEvents.length === 1 ? "event" : "events"}
           </span>
         </div>
 
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {events.map((event) => (
+        <label className="mb-6 block">
+          <span className="sr-only">Search events by title</span>
+          <span className="relative block">
+            <span aria-hidden="true" className="pointer-events-none absolute inset-y-0 left-4 flex items-center text-slate-400">
+              ⌕
+            </span>
+            <input
+              type="search"
+              value={searchTerm}
+              onChange={(event) => setSearchTerm(event.target.value)}
+              placeholder="Search events by title..."
+              className="w-full rounded-xl border border-slate-200 bg-white py-3 pl-11 pr-4 text-sm text-slate-900 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-indigo-400 focus:ring-4 focus:ring-indigo-100 sm:max-w-lg"
+            />
+          </span>
+        </label>
+
+        {filteredEvents.length > 0 ? (
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {filteredEvents.map((event) => (
             <article
               key={event.id}
               className="group overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-900/10"
@@ -83,7 +109,15 @@ export default function Home() {
               </div>
             </article>
           ))}
-        </div>
+          </div>
+        ) : (
+          <div className="rounded-2xl border border-dashed border-slate-300 bg-white px-6 py-14 text-center">
+            <p className="text-lg font-semibold text-slate-800">No events found</p>
+            <p className="mt-2 text-sm text-slate-500">
+              Try a different title or clear the search to see all events.
+            </p>
+          </div>
+        )}
       </section>
     </main>
   );
