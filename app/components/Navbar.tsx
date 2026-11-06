@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <header className="border-b border-slate-200/80 bg-white sticky top-0 Z-[9999]">
+    <header className="border-b border-slate-200/80 bg-white sticky top-0 Z-[9999] w-full bg-white shadow-sm">
       <nav
         aria-label="Main navigation"
         className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-5 py-4 sm:px-8"

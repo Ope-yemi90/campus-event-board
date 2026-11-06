@@ -11,6 +11,9 @@ const categoryStyles: Record<EventCategory, string> = {
   Social: "bg-amber-50 text-amber-700 ring-amber-600/15",
 };
 
+const categoryFilters = ["All", "Tech", "Sports", "Faith", "Social"] as const;
+type CategoryFilter = (typeof categoryFilters)[number];
+
 function formatEventDate(date: string) {
   const [year, month, day] = date.split("-").map(Number);
 
@@ -23,9 +26,12 @@ function formatEventDate(date: string) {
 
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState<CategoryFilter>("All");
   const normalizedSearchTerm = searchTerm.trim().toLowerCase();
-  const filteredEvents = events.filter((event) =>
-    event.title.toLowerCase().includes(normalizedSearchTerm),
+  const filteredEvents = events.filter(
+    (event) =>
+      (selectedCategory === "All" || event.category === selectedCategory) &&
+      event.title.toLowerCase().includes(normalizedSearchTerm),
   );
 
   return (
@@ -71,6 +77,29 @@ export default function Home() {
             />
           </span>
         </label>
+
+        <div className="mb-6 flex flex-wrap items-center gap-2" aria-label="Filter events by category">
+          <span className="mr-1 text-sm font-medium text-slate-600">Category:</span>
+          {categoryFilters.map((category) => {
+            const isSelected = selectedCategory === category;
+
+            return (
+              <button
+                key={category}
+                type="button"
+                aria-pressed={isSelected}
+                onClick={() => setSelectedCategory(category)}
+                className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+                  isSelected
+                    ? "bg-indigo-600 text-white shadow-sm"
+                    : "bg-white text-slate-600 ring-1 ring-inset ring-slate-200 hover:bg-indigo-50 hover:text-indigo-700"
+                }`}
+              >
+                {category}
+              </button>
+            );
+          })}
+        </div>
 
         {filteredEvents.length > 0 ? (
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
