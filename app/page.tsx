@@ -13,6 +13,7 @@ const categoryStyles: Record<EventCategory, string> = {
 
 const categoryFilters = ["All", "Tech", "Sports", "Faith", "Social"] as const;
 type CategoryFilter = (typeof categoryFilters)[number];
+type DateSortOrder = "earliest" | "latest";
 
 function formatEventDate(date: string) {
   const [year, month, day] = date.split("-").map(Number);
@@ -27,12 +28,18 @@ function formatEventDate(date: string) {
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<CategoryFilter>("All");
+  const [dateSortOrder, setDateSortOrder] = useState<DateSortOrder>("earliest");
   const normalizedSearchTerm = searchTerm.trim().toLowerCase();
-  const filteredEvents = events.filter(
-    (event) =>
-      (selectedCategory === "All" || event.category === selectedCategory) &&
-      event.title.toLowerCase().includes(normalizedSearchTerm),
-  );
+  const filteredEvents = events
+    .filter(
+      (event) =>
+        (selectedCategory === "All" || event.category === selectedCategory) &&
+        event.title.toLowerCase().includes(normalizedSearchTerm),
+    )
+    .sort((firstEvent, secondEvent) => {
+      const dateOrder = firstEvent.date.localeCompare(secondEvent.date);
+      return dateSortOrder === "earliest" ? dateOrder : -dateOrder;
+    });
 
   return (
     <main className="min-h-screen bg-stone-50 text-slate-900">
@@ -76,6 +83,18 @@ export default function Home() {
               className="w-full rounded-xl border border-slate-200 bg-white py-3 pl-11 pr-4 text-sm text-slate-900 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-indigo-400 focus:ring-4 focus:ring-indigo-100 sm:max-w-lg"
             />
           </span>
+        </label>
+
+        <label className="mb-5 block w-full sm:w-fit">
+          <span className="mb-1.5 block text-sm font-medium text-slate-600">Sort by Date</span>
+          <select
+            value={dateSortOrder}
+            onChange={(event) => setDateSortOrder(event.target.value as DateSortOrder)}
+            className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 shadow-sm outline-none transition focus:border-indigo-400 focus:ring-4 focus:ring-indigo-100 sm:min-w-56"
+          >
+            <option value="earliest">Earliest to latest</option>
+            <option value="latest">Latest to earliest</option>
+          </select>
         </label>
 
         <div className="mb-6 flex flex-wrap items-center gap-2" aria-label="Filter events by category">
