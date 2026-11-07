@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Suspense } from "react";
 import { events, type EventCategory } from "../../data/events";
+import EventCountdown from "./EventCountdown";
 
 type EventDetailsPageProps = {
   params: Promise<{ id: string }>;
@@ -110,6 +111,8 @@ async function EventDetailsContent({ params }: EventDetailsPageProps) {
                 <dd className="mt-1.5 font-medium text-slate-800">{event.venue}</dd>
               </div>
             </dl>
+
+            <EventCountdown date={event.date} time={event.time} />
 
             <section className="mt-7">
               <h2 className="text-lg font-bold text-slate-900">About this event</h2>
