@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { events, type EventCategory } from "./data/events";
 import Navbar from "./components/Navbar";
 
@@ -125,9 +126,10 @@ export default function Home() {
         {filteredEvents.length > 0 ? (
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {filteredEvents.map((event) => (
-            <article
+            <Link
+              href={`/events/${event.id}`}
               key={event.id}
-              className="group overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-900/10"
+              className="group block overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-900/10"
             >
               <div className="relative h-48 overflow-hidden bg-slate-100">
                 <img
@@ -157,7 +159,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-            </article>
+            </Link>
           ))}
           </div>
         ) : (
