@@ -6,9 +6,9 @@ import { events, type EventCategory } from "../data/events";
 import { useSavedEvents } from "../context/SavedEventsContext";
 
 const categoryStyles: Record<EventCategory, string> = {
-  Tech: "bg-blue-50 text-blue-700 ring-blue-600/15",
-  Sports: "bg-emerald-50 text-emerald-700 ring-emerald-600/15",
-  Faith: "bg-violet-50 text-violet-700 ring-violet-600/15",
+  Tech: "bg-teal-50 text-teal-800 ring-teal-700/15",
+  Sports: "bg-teal-50 text-teal-800 ring-teal-700/15",
+  Faith: "bg-teal-50 text-teal-800 ring-teal-700/15",
   Social: "bg-amber-50 text-amber-700 ring-amber-600/15",
 };
 
@@ -32,7 +32,7 @@ export default function MyEventsPage() {
 
       <section className="mx-auto max-w-7xl px-5 pb-16 pt-12 sm:px-8 sm:pt-16">
         <div className="mb-8">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-indigo-600">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-teal-700">
             Your campus, your plans
           </p>
           <h1 className="text-4xl font-bold tracking-tight text-blue-950 sm:text-5xl">
@@ -55,7 +55,7 @@ export default function MyEventsPage() {
               <Link
                 key={event.id}
                 href={`/events/${event.id}`}
-                className="group block overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-900/10"
+                className="group block overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-950/10"
               >
                 <div className="relative h-48 overflow-hidden bg-slate-100">
                   <img
@@ -71,20 +71,20 @@ export default function MyEventsPage() {
                 </div>
 
                 <div className="p-5">
-                  <h2 className="min-h-14 text-lg font-bold leading-6 text-slate-900 transition-colors group-hover:text-indigo-700">
+                  <h2 className="min-h-14 text-lg font-bold leading-6 text-blue-950 transition-colors group-hover:text-teal-700">
                     {event.title}
                   </h2>
                   <div className="mt-4 space-y-2.5 text-sm text-slate-600">
                     <p className="flex items-center gap-2.5">
-                      <span className="w-5 shrink-0 font-medium text-indigo-600">Date</span>
+                      <span className="w-5 shrink-0 font-medium text-teal-700">Date</span>
                       <span>{formatEventDate(event.date)}</span>
                     </p>
                     <p className="flex items-center gap-2.5">
-                      <span className="w-5 shrink-0 font-medium text-indigo-600">Time</span>
+                      <span className="w-5 shrink-0 font-medium text-teal-700">Time</span>
                       <span>{event.time}</span>
                     </p>
                     <p className="flex items-start gap-2.5">
-                      <span className="shrink-0 font-medium text-indigo-600">Venue</span>
+                      <span className="shrink-0 font-medium text-teal-700">Venue</span>
                       <span className="line-clamp-2">{event.venue}</span>
                     </p>
                   </div>

@@ -8,9 +8,9 @@ type EventDetailsPageProps = {
 };
 
 const categoryStyles: Record<EventCategory, string> = {
-  Tech: "bg-blue-50 text-blue-700 ring-blue-600/15",
-  Sports: "bg-emerald-50 text-emerald-700 ring-emerald-600/15",
-  Faith: "bg-violet-50 text-violet-700 ring-violet-600/15",
+  Tech: "bg-teal-50 text-teal-800 ring-teal-700/15",
+  Sports: "bg-teal-50 text-teal-800 ring-teal-700/15",
+  Faith: "bg-teal-50 text-teal-800 ring-teal-700/15",
   Social: "bg-amber-50 text-amber-700 ring-amber-600/15",
 };
 
@@ -53,7 +53,7 @@ async function EventDetailsContent({ params }: EventDetailsPageProps) {
     return (
       <main className="grid min-h-screen place-items-center bg-slate-50 px-5 text-slate-900">
         <div className="w-full max-w-lg rounded-2xl border border-slate-200 bg-white p-8 text-center shadow-sm sm:p-10">
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-indigo-600">
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-teal-700">
             Campus Events
           </p>
           <h1 className="mt-4 text-3xl font-bold tracking-tight">Event not found</h1>
@@ -62,7 +62,7 @@ async function EventDetailsContent({ params }: EventDetailsPageProps) {
           </p>
           <Link
             href="/"
-            className="mt-7 inline-flex rounded-xl bg-indigo-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-indigo-700"
+            className="mt-7 inline-flex rounded-xl bg-teal-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-teal-800"
           >
             Back to Events
           </Link>
@@ -76,7 +76,7 @@ async function EventDetailsContent({ params }: EventDetailsPageProps) {
       <div className="mx-auto max-w-5xl">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 rounded-lg py-2 text-sm font-semibold text-indigo-700 transition hover:text-indigo-900"
+          className="inline-flex items-center gap-2 rounded-lg py-2 text-sm font-semibold text-teal-800 transition hover:text-teal-900"
         >
           <span aria-hidden="true">←</span>
           Back to Events
@@ -115,7 +115,7 @@ async function EventDetailsContent({ params }: EventDetailsPageProps) {
             <EventCountdown date={event.date} time={event.time} />
 
             <section className="mt-7">
-              <h2 className="text-lg font-bold text-slate-900">About this event</h2>
+              <h2 className="text-lg font-bold text-blue-950">About this event</h2>
               <p className="mt-3 max-w-3xl whitespace-pre-line leading-7 text-slate-600">
                 {event.description}
               </p>

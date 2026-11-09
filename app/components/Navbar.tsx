@@ -8,7 +8,7 @@ export default function Navbar() {
         className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-5 py-4 sm:px-8"
       >
         <Link href="/" className="flex items-center gap-3" aria-label="Campus Events home">
-          <span className="grid size-10 place-items-center rounded-xl bg-[#0F766E] text-lg font-bold text-white shadow-sm">
+          <span className="grid size-10 place-items-center rounded-xl bg-teal-700 text-lg font-bold text-white shadow-sm">
             C
           </span>
           <span className="text-lg font-bold tracking-tight text-white">Campus Events</span>
