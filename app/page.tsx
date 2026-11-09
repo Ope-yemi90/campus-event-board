@@ -119,8 +119,8 @@ export default function Home() {
                 onClick={() => setSelectedCategory(category)}
                 className={`min-h-11 touch-manipulation rounded-full px-4 py-2 text-sm font-medium transition-colors ${
                   isSelected
-                    ? "bg-indigo-600 text-white shadow-sm"
-                    : "bg-white text-slate-600 ring-1 ring-inset ring-slate-200 hover:bg-indigo-50 hover:text-indigo-700"
+                    ? "bg-teal-700 text-white shadow-sm"
+                    : "bg-white text-slate-600 ring-1 ring-inset ring-slate-200 hover:bg-teal-50 hover:text-teal-800"
                 }`}
               >
                 {category}
