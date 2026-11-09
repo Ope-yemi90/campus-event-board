@@ -44,7 +44,7 @@ export const events: CampusEvent[] = [
     time: "10:00 AM",
     venue: "Mbasir First Floor",
     image:
-      "https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1651293478838-1f51675131c5?q=80&w=875&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
     description:
       "An Islamic gathering for learning, reflection and strengthening brotherhood and sisterhood.",
   },
@@ -54,9 +54,9 @@ export const events: CampusEvent[] = [
     category: "Social",
     date: "2026-11-25",
     time: "2:00 PM",
-    venue: "Student Centre Courtyard",
+    venue: "Entreprenuership Hall",
     image:
-      "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1200&q=80",
+      "https://plus.unsplash.com/premium_photo-1714060723069-6b824bb942d0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
     description:
       "Student showcase business ideas, products and creative ventures.",
   },
@@ -68,7 +68,7 @@ export const events: CampusEvent[] = [
     time: "11:00 AM",
     venue: "IFF Accounting Lab",
     image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+      "https://media.istockphoto.com/id/2191084357/photo/japanese-woman-interacts-with-futuristic-transparent-screen-displaying-digital-graphs-and.webp?a=1&b=1&s=612x612&w=0&k=20&c=u7kSdaY8wfQ5KxBDFgm7EsNWxhYhwDr2Sv4egaFK1n8=",
     description:
       "Exploring artifical intelligence and how it is changing different industries",
   },
@@ -80,9 +80,9 @@ export const events: CampusEvent[] = [
     time: "7:00 AM",
     venue: "University Basketball court",
     image:
-      "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1577471488278-16eec37ffcc2?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
     description:
-      "Start the day with a relaxed group walk around campus. The student health association will share simple wellbeing tips, and walkers of all fitness levels can join.",
+      "",
   },
   {
     id: "quran-session",
@@ -92,7 +92,7 @@ export const events: CampusEvent[] = [
     time: "4:30 PM",
     venue: "University Central Mosque",
     image:
-      "https://images.unsplash.com/photo-1512389142860-9c449e58a543?auto=format&fit=crop&w=1200&q=80",
+      "https://plus.unsplash.com/premium_photo-1726718571654-af0f681bce8a?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
     description:
       "An interactive session where students come together to recite the Holy Qur'an. improve their Tajweed, correct their recitation, and deepen their understanding of its teachings.",
   },
@@ -104,7 +104,7 @@ export const events: CampusEvent[] = [
     time: "11:00 AM",
     venue: "Adiat Hall",
     image:
-      "",
+      "https://images.unsplash.com/photo-1660795938356-b584cf857ba5?q=80&w=1031&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
     description:
       "A friendly intellectual competition where students represent their department, exchange opinions, defend arguments and develop their public speaking skills.",
   },

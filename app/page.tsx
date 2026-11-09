@@ -54,11 +54,11 @@ export default function Home() {
             CAMPUS LIFE, ALL IN ONE PLACE
           </p>
           <h1 className="text-4xl font-bold tracking-tight text-blue-950 sm:text-5xl">
-             Don't miss what's happening
+            Don&apos;t miss what&apos;s happening
           </h1>
           <p className="mt-4 text-base leading-7 text-slate-600 sm:text-lg">
             Find events that interest you, meet new people and make the most of your campus experience.
-            There's something for everyone to look forward to.
+            There&apos;s something for everyone to look forward to.
           </p>
         </div>
 
