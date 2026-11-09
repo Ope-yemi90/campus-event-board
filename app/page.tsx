@@ -65,7 +65,7 @@ export default function Home() {
         <div className="mb-5 flex items-end justify-between gap-4">
           <div>
             <h2 className="text-xl font-bold tracking-tight text-slate-900">Upcoming events</h2>
-            <p className="mt-1 text-sm text-slate-500">A little something to add to your calendar.</p>
+            <p className="mt-1 text-sm text-slate-500">Find something exciting to be part of.</p>
           </div>
           <span className="rounded-full bg-white px-3 py-1.5 text-sm font-medium text-slate-600 ring-1 ring-slate-200">
             {filteredEvents.length} {filteredEvents.length === 1 ? "event" : "events"}
