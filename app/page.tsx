@@ -7,10 +7,10 @@ import Navbar from "./components/Navbar";
 import { useSavedEvents } from "./context/SavedEventsContext";
 
 const categoryStyles: Record<EventCategory, string> = {
-  Tech: "bg-teal-50 text-teal-800 ring-teal-700/15",
-  Sports: "bg-teal-50 text-teal-800 ring-teal-700/15",
-  Faith: "bg-teal-50 text-teal-800 ring-teal-700/15",
-  Social: "bg-amber-50 text-amber-700 ring-amber-600/15",
+  Tech: "bg-teal-950 text-teal-200 ring-teal-800",
+  Sports: "bg-teal-950 text-teal-200 ring-teal-800",
+  Faith: "bg-teal-950 text-teal-200 ring-teal-800",
+  Social: "bg-amber-950 text-amber-300 ring-amber-800",
 };
 
 const categoryFilters = ["All", "Tech", "Sports", "Faith", "Social"] as const;
@@ -45,18 +45,18 @@ export default function Home() {
     });
 
   return (
-    <main className="min-h-screen bg-slate-50 text-slate-900">
+    <main className="min-h-screen bg-neutral-950 text-neutral-400">
       <Navbar />
 
       <section id="home" className="mx-auto max-w-7xl px-5 pb-16 pt-12 sm:px-8 sm:pt-16">
         <div className="mb-9 max-w-2xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-teal-700">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-amber-500">
             CAMPUS LIFE, ALL IN ONE PLACE
           </p>
-          <h1 className="text-4xl font-bold tracking-tight text-blue-950 sm:text-5xl">
+          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
             Don&apos;t miss what&apos;s happening
           </h1>
-          <p className="mt-4 text-base leading-7 text-slate-600 sm:text-lg">
+          <p className="mt-4 text-base leading-7 text-neutral-400 sm:text-lg">
             Find events that interest you, meet new people and make the most of your campus experience.
             There&apos;s something for everyone to look forward to.
           </p>
@@ -64,10 +64,10 @@ export default function Home() {
 
         <div className="mb-5 flex items-end justify-between gap-4">
           <div>
-            <h2 className="text-xl font-bold tracking-tight text-slate-900">Upcoming events</h2>
-            <p className="mt-1 text-sm text-slate-500">Find something exciting to be part of.</p>
+            <h2 className="text-xl font-bold tracking-tight text-white">Upcoming events</h2>
+            <p className="mt-1 text-sm text-neutral-400">Find something exciting to be part of.</p>
           </div>
-          <span className="rounded-full bg-white px-3 py-1.5 text-sm font-medium text-slate-600 ring-1 ring-slate-200">
+          <span className="rounded-full bg-neutral-900 px-3 py-1.5 text-sm font-medium text-neutral-300 ring-1 ring-neutral-800">
             {filteredEvents.length} {filteredEvents.length === 1 ? "event" : "events"}
           </span>
         </div>
@@ -76,7 +76,7 @@ export default function Home() {
         <label className="block min-w-0 flex-1">
           <span className="sr-only">Search events by title</span>
           <span className="relative block">
-            <span aria-hidden="true" className="pointer-events-none absolute inset-y-0 left-4 flex items-center text-slate-400">
+            <span aria-hidden="true" className="pointer-events-none absolute inset-y-0 left-4 flex items-center text-neutral-500">
               ⌕
             </span>
             <input
@@ -84,17 +84,17 @@ export default function Home() {
               value={searchTerm}
               onChange={(event) => setSearchTerm(event.target.value)}
               placeholder="Search events by title..."
-            className="w-full rounded-xl border border-slate-200 bg-white py-3 pl-11 pr-4 text-sm text-slate-900 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-teal-600 focus:ring-4 focus:ring-teal-100"
+            className="w-full rounded-xl border border-neutral-700 bg-neutral-900 py-3 pl-11 pr-4 text-sm text-white shadow-sm outline-none transition placeholder:text-neutral-500 focus:border-teal-600 focus:ring-4 focus:ring-teal-900/50"
             />
           </span>
         </label>
 
         <label className="block w-full shrink-0 sm:w-56">
-          <span className="mb-1.5 block text-sm font-medium text-slate-600">Sort by Date</span>
+          <span className="mb-1.5 block text-sm font-medium text-neutral-400">Sort by Date</span>
           <select
             value={dateSortOrder}
             onChange={(event) => setDateSortOrder(event.target.value as DateSortOrder)}
-            className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 shadow-sm outline-none transition focus:border-teal-600 focus:ring-4 focus:ring-teal-100"
+            className="w-full rounded-xl border border-neutral-700 bg-neutral-900 px-4 py-3 text-sm text-white shadow-sm outline-none transition focus:border-teal-600 focus:ring-4 focus:ring-teal-900/50"
           >
             <option value="earliest">Earliest to latest</option>
             <option value="latest">Latest to earliest</option>
@@ -107,7 +107,7 @@ export default function Home() {
           role="group"
           aria-label="Filter events by category"
         >
-          <span className="mr-1 text-sm font-medium text-slate-600">Category:</span>
+          <span className="mr-1 text-sm font-medium text-neutral-400">Category:</span>
           {categoryFilters.map((category) => {
             const isSelected = selectedCategory === category;
 
@@ -120,7 +120,7 @@ export default function Home() {
                 className={`min-h-11 touch-manipulation rounded-full px-4 py-2 text-sm font-medium transition-colors ${
                   isSelected
                     ? "bg-teal-700 text-white shadow-sm"
-                    : "bg-white text-slate-600 ring-1 ring-inset ring-slate-200 hover:bg-teal-50 hover:text-teal-800"
+                    : "bg-neutral-900 text-neutral-300 ring-1 ring-inset ring-neutral-700 hover:bg-neutral-800 hover:text-white"
                 }`}
               >
                 {category}
@@ -134,13 +134,13 @@ export default function Home() {
           {filteredEvents.map((event) => (
             <article
               key={event.id}
-              className="group overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-950/10"
+              className="group overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900 shadow-sm shadow-black/20 transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/50"
             >
             <Link
               href={`/events/${event.id}`}
               className="block"
             >
-              <div className="relative h-48 overflow-hidden bg-slate-100">
+              <div className="relative h-48 overflow-hidden bg-neutral-800">
                 <img
                   src={event.image}
                   alt={event.title}
@@ -154,13 +154,13 @@ export default function Home() {
               </div>
 
               <div className="p-5">
-                <h3 className="min-h-14 text-lg font-bold leading-6 text-blue-950 transition-colors group-hover:text-teal-700">
+                <h3 className="min-h-14 text-lg font-bold leading-6 text-white transition-colors group-hover:text-teal-300">
                   {event.title}
                 </h3>
-                <div className="mt-4 space-y-2.5 text-sm text-slate-600">
+                <div className="mt-4 space-y-2.5 text-sm text-neutral-400">
                   <p className="flex items-center gap-2.5">
                     <span aria-hidden="true" className="w-5 text-center text-teal-700">◷</span>
-                    <span>{formatEventDate(event.date)} <span className="text-slate-300">·</span> {event.time}</span>
+                    <span>{formatEventDate(event.date)} <span className="text-neutral-600">·</span> {event.time}</span>
                   </p>
                   <p className="flex items-start gap-2.5">
                     <span aria-hidden="true" className="w-5 shrink-0 text-center text-teal-700">⌖</span>
@@ -177,7 +177,7 @@ export default function Home() {
                   className={`w-full rounded-lg px-4 py-2.5 text-sm font-semibold transition-colors ${
                     isEventSaved(event.id)
                       ? "bg-teal-700 text-white hover:bg-teal-800"
-                      : "bg-slate-100 text-slate-700 hover:bg-teal-50 hover:text-teal-800"
+                      : "bg-neutral-800 text-neutral-200 hover:bg-neutral-700 hover:text-white"
                   }`}
                 >
                   {isEventSaved(event.id) ? "Unsave Event" : "Save Event"}
@@ -187,9 +187,9 @@ export default function Home() {
           ))}
           </div>
         ) : (
-          <div className="rounded-2xl border border-dashed border-slate-300 bg-white px-6 py-14 text-center">
-            <p className="text-lg font-semibold text-slate-800">No events found</p>
-            <p className="mt-2 text-sm text-slate-500">
+          <div className="rounded-2xl border border-dashed border-neutral-700 bg-neutral-900 px-6 py-14 text-center">
+            <p className="text-lg font-semibold text-white">No events found</p>
+            <p className="mt-2 text-sm text-neutral-400">
               Try a different title or clear the search to see all events.
             </p>
           </div>

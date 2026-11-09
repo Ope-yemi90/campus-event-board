@@ -6,10 +6,10 @@ import { events, type EventCategory } from "../data/events";
 import { useSavedEvents } from "../context/SavedEventsContext";
 
 const categoryStyles: Record<EventCategory, string> = {
-  Tech: "bg-teal-50 text-teal-800 ring-teal-700/15",
-  Sports: "bg-teal-50 text-teal-800 ring-teal-700/15",
-  Faith: "bg-teal-50 text-teal-800 ring-teal-700/15",
-  Social: "bg-amber-50 text-amber-700 ring-amber-600/15",
+  Tech: "bg-teal-950 text-teal-200 ring-teal-800",
+  Sports: "bg-teal-950 text-teal-200 ring-teal-800",
+  Faith: "bg-teal-950 text-teal-200 ring-teal-800",
+  Social: "bg-amber-950 text-amber-300 ring-amber-800",
 };
 
 function formatEventDate(date: string) {
@@ -27,25 +27,25 @@ export default function MyEventsPage() {
   const savedEvents = events.filter((event) => savedEventIds.includes(event.id));
 
   return (
-    <main className="min-h-screen bg-slate-50 text-slate-900">
+    <main className="min-h-screen bg-neutral-950 text-neutral-400">
       <Navbar />
 
       <section className="mx-auto max-w-7xl px-5 pb-16 pt-12 sm:px-8 sm:pt-16">
         <div className="mb-8">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-teal-700">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-amber-500">
             Your campus, your plans
           </p>
-          <h1 className="text-4xl font-bold tracking-tight text-blue-950 sm:text-5xl">
+          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
             My Events
           </h1>
-          <p className="mt-4 text-base leading-7 text-slate-600">
+          <p className="mt-4 text-base leading-7 text-neutral-400">
             Events you've saved for later.
           </p>
         </div>
 
         {savedEvents.length === 0 ? (
-          <div className="rounded-2xl border border-dashed border-slate-300 bg-white px-6 py-14 text-center">
-            <p className="text-lg font-semibold text-slate-800">
+          <div className="rounded-2xl border border-dashed border-neutral-700 bg-neutral-900 px-6 py-14 text-center">
+            <p className="text-lg font-semibold text-white">
               You haven&apos;t saved any events yet.
             </p>
           </div>
@@ -55,9 +55,9 @@ export default function MyEventsPage() {
               <Link
                 key={event.id}
                 href={`/events/${event.id}`}
-                className="group block overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-950/10"
+                className="group block overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900 shadow-sm shadow-black/20 transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/50"
               >
-                <div className="relative h-48 overflow-hidden bg-slate-100">
+                <div className="relative h-48 overflow-hidden bg-neutral-800">
                   <img
                     src={event.image}
                     alt={event.title}
@@ -71,20 +71,20 @@ export default function MyEventsPage() {
                 </div>
 
                 <div className="p-5">
-                  <h2 className="min-h-14 text-lg font-bold leading-6 text-blue-950 transition-colors group-hover:text-teal-700">
+                  <h2 className="min-h-14 text-lg font-bold leading-6 text-white transition-colors group-hover:text-teal-300">
                     {event.title}
                   </h2>
-                  <div className="mt-4 space-y-2.5 text-sm text-slate-600">
+                  <div className="mt-4 space-y-2.5 text-sm text-neutral-400">
                     <p className="flex items-center gap-2.5">
-                      <span className="w-5 shrink-0 font-medium text-teal-700">Date</span>
+                      <span className="w-5 shrink-0 font-medium text-amber-500">Date</span>
                       <span>{formatEventDate(event.date)}</span>
                     </p>
                     <p className="flex items-center gap-2.5">
-                      <span className="w-5 shrink-0 font-medium text-teal-700">Time</span>
+                      <span className="w-5 shrink-0 font-medium text-amber-500">Time</span>
                       <span>{event.time}</span>
                     </p>
                     <p className="flex items-start gap-2.5">
-                      <span className="shrink-0 font-medium text-teal-700">Venue</span>
+                      <span className="shrink-0 font-medium text-amber-500">Venue</span>
                       <span className="line-clamp-2">{event.venue}</span>
                     </p>
                   </div>

@@ -8,10 +8,10 @@ type EventDetailsPageProps = {
 };
 
 const categoryStyles: Record<EventCategory, string> = {
-  Tech: "bg-teal-50 text-teal-800 ring-teal-700/15",
-  Sports: "bg-teal-50 text-teal-800 ring-teal-700/15",
-  Faith: "bg-teal-50 text-teal-800 ring-teal-700/15",
-  Social: "bg-amber-50 text-amber-700 ring-amber-600/15",
+  Tech: "bg-teal-950 text-teal-200 ring-teal-800",
+  Sports: "bg-teal-950 text-teal-200 ring-teal-800",
+  Faith: "bg-teal-950 text-teal-200 ring-teal-800",
+  Social: "bg-amber-950 text-amber-300 ring-amber-800",
 };
 
 function formatEventDate(date: string) {
@@ -31,7 +31,7 @@ export function generateStaticParams() {
 
 function EventDetailsFallback() {
   return (
-    <main className="grid min-h-screen place-items-center bg-slate-50 px-5 text-slate-600">
+    <main className="grid min-h-screen place-items-center bg-neutral-950 px-5 text-neutral-400">
       <p>Loading event details...</p>
     </main>
   );
@@ -51,13 +51,13 @@ async function EventDetailsContent({ params }: EventDetailsPageProps) {
 
   if (!event) {
     return (
-      <main className="grid min-h-screen place-items-center bg-slate-50 px-5 text-slate-900">
-        <div className="w-full max-w-lg rounded-2xl border border-slate-200 bg-white p-8 text-center shadow-sm sm:p-10">
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-teal-700">
+      <main className="grid min-h-screen place-items-center bg-neutral-950 px-5 text-neutral-400">
+        <div className="w-full max-w-lg rounded-2xl border border-neutral-800 bg-neutral-900 p-8 text-center shadow-sm sm:p-10">
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-amber-500">
             Campus Events
           </p>
-          <h1 className="mt-4 text-3xl font-bold tracking-tight">Event not found</h1>
-          <p className="mt-3 text-slate-600">
+          <h1 className="mt-4 text-3xl font-bold tracking-tight text-white">Event not found</h1>
+          <p className="mt-3 text-neutral-400">
             We couldn't find an event with that ID. It may have been removed.
           </p>
           <Link
@@ -72,18 +72,18 @@ async function EventDetailsContent({ params }: EventDetailsPageProps) {
   }
 
   return (
-    <main className="min-h-screen bg-slate-50 px-5 py-8 text-slate-900 sm:px-8 sm:py-12">
+    <main className="min-h-screen bg-neutral-950 px-5 py-8 text-neutral-400 sm:px-8 sm:py-12">
       <div className="mx-auto max-w-5xl">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 rounded-lg py-2 text-sm font-semibold text-teal-800 transition hover:text-teal-900"
+          className="inline-flex items-center gap-2 rounded-lg py-2 text-sm font-semibold text-teal-300 transition hover:text-teal-200"
         >
           <span aria-hidden="true">←</span>
           Back to Events
         </Link>
 
-        <article className="mt-5 overflow-hidden rounded-3xl border border-slate-200/80 bg-white shadow-sm">
-          <div className="h-56 bg-slate-100 sm:h-80 lg:h-[26rem]">
+        <article className="mt-5 overflow-hidden rounded-3xl border border-neutral-800 bg-neutral-900 shadow-sm shadow-black/30">
+          <div className="h-56 bg-neutral-800 sm:h-80 lg:h-[26rem]">
             <img src={event.image} alt={event.title} className="h-full w-full object-cover" />
           </div>
 
@@ -93,30 +93,30 @@ async function EventDetailsContent({ params }: EventDetailsPageProps) {
             >
               {event.category}
             </span>
-            <h1 className="mt-4 text-3xl font-bold tracking-tight text-blue-950 sm:text-4xl">
+            <h1 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl">
               {event.title}
             </h1>
 
-            <dl className="mt-7 grid gap-5 border-y border-slate-100 py-6 sm:grid-cols-3">
+            <dl className="mt-7 grid gap-5 border-y border-neutral-800 py-6 sm:grid-cols-3">
               <div>
-                <dt className="text-xs font-semibold uppercase tracking-wide text-slate-500">Date</dt>
-                <dd className="mt-1.5 font-medium text-slate-800">{formatEventDate(event.date)}</dd>
+                <dt className="text-xs font-semibold uppercase tracking-wide text-amber-500">Date</dt>
+                <dd className="mt-1.5 font-medium text-neutral-200">{formatEventDate(event.date)}</dd>
               </div>
               <div>
-                <dt className="text-xs font-semibold uppercase tracking-wide text-slate-500">Time</dt>
-                <dd className="mt-1.5 font-medium text-slate-800">{event.time}</dd>
+                <dt className="text-xs font-semibold uppercase tracking-wide text-amber-500">Time</dt>
+                <dd className="mt-1.5 font-medium text-neutral-200">{event.time}</dd>
               </div>
               <div>
-                <dt className="text-xs font-semibold uppercase tracking-wide text-slate-500">Venue</dt>
-                <dd className="mt-1.5 font-medium text-slate-800">{event.venue}</dd>
+                <dt className="text-xs font-semibold uppercase tracking-wide text-amber-500">Venue</dt>
+                <dd className="mt-1.5 font-medium text-neutral-200">{event.venue}</dd>
               </div>
             </dl>
 
             <EventCountdown date={event.date} time={event.time} />
 
             <section className="mt-7">
-              <h2 className="text-lg font-bold text-blue-950">About this event</h2>
-              <p className="mt-3 max-w-3xl whitespace-pre-line leading-7 text-slate-600">
+              <h2 className="text-lg font-bold text-white">About this event</h2>
+              <p className="mt-3 max-w-3xl whitespace-pre-line leading-7 text-neutral-400">
                 {event.description}
               </p>
             </section>
