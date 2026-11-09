@@ -93,7 +93,7 @@ async function EventDetailsContent({ params }: EventDetailsPageProps) {
             >
               {event.category}
             </span>
-            <h1 className="mt-4 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
+            <h1 className="mt-4 text-3xl font-bold tracking-tight text-blue-950 sm:text-4xl">
               {event.title}
             </h1>
 

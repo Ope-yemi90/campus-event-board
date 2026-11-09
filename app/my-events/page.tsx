@@ -35,7 +35,7 @@ export default function MyEventsPage() {
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-indigo-600">
             Your campus, your plans
           </p>
-          <h1 className="text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl">
+          <h1 className="text-4xl font-bold tracking-tight text-blue-950 sm:text-5xl">
             My Events
           </h1>
           <p className="mt-4 text-base leading-7 text-slate-600">
