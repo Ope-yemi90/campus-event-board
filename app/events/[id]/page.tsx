@@ -31,7 +31,7 @@ export function generateStaticParams() {
 
 function EventDetailsFallback() {
   return (
-    <main className="grid min-h-screen place-items-center bg-stone-50 px-5 text-slate-600">
+    <main className="grid min-h-screen place-items-center bg-slate-50 px-5 text-slate-600">
       <p>Loading event details...</p>
     </main>
   );
@@ -51,14 +51,14 @@ async function EventDetailsContent({ params }: EventDetailsPageProps) {
 
   if (!event) {
     return (
-      <main className="grid min-h-screen place-items-center bg-stone-50 px-5 text-slate-900">
+      <main className="grid min-h-screen place-items-center bg-slate-50 px-5 text-slate-900">
         <div className="w-full max-w-lg rounded-2xl border border-slate-200 bg-white p-8 text-center shadow-sm sm:p-10">
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-indigo-600">
             Campus Events
           </p>
           <h1 className="mt-4 text-3xl font-bold tracking-tight">Event not found</h1>
           <p className="mt-3 text-slate-600">
-            We couldn&apos;t find an event with that ID. It may have been removed.
+            We couldn't find an event with that ID. It may have been removed.
           </p>
           <Link
             href="/"
@@ -72,7 +72,7 @@ async function EventDetailsContent({ params }: EventDetailsPageProps) {
   }
 
   return (
-    <main className="min-h-screen bg-stone-50 px-5 py-8 text-slate-900 sm:px-8 sm:py-12">
+    <main className="min-h-screen bg-slate-50 px-5 py-8 text-slate-900 sm:px-8 sm:py-12">
       <div className="mx-auto max-w-5xl">
         <Link
           href="/"

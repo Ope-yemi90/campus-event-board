@@ -53,12 +53,12 @@ export default function Home() {
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-indigo-600">
             Your campus, happening
           </p>
-          <h1 className="text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl">
-            Discover what&apos;s on.
+          <h1 className="text-4xl font-bold tracking-tight text-blue-950 sm:text-5xl">
+            Discover what's on.
           </h1>
           <p className="mt-4 text-base leading-7 text-slate-600 sm:text-lg">
             Find talks, games, gatherings, and good times happening around campus.
-            There&apos;s something for everyone to look forward to.
+            There's something for everyone to look forward to.
           </p>
         </div>
 
