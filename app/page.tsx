@@ -51,13 +51,13 @@ export default function Home() {
       <section id="home" className="mx-auto max-w-7xl px-5 pb-16 pt-12 sm:px-8 sm:pt-16">
         <div className="mb-9 max-w-2xl">
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-teal-700">
-            Your campus, happening
+            CAMPUS LIFE, ALL IN ONE PLACE
           </p>
           <h1 className="text-4xl font-bold tracking-tight text-blue-950 sm:text-5xl">
-            Discover what's on.
+             Don't miss what's happening
           </h1>
           <p className="mt-4 text-base leading-7 text-slate-600 sm:text-lg">
-            Find talks, games, gatherings, and good times happening around campus.
+            Find events that interest you, meet new people and make the most of your campus experience.
             There's something for everyone to look forward to.
           </p>
         </div>
