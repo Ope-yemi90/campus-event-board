@@ -45,7 +45,7 @@ export default function Home() {
     });
 
   return (
-    <main className="min-h-screen bg-stone-50 text-slate-900">
+    <main className="min-h-screen bg-slate-50 text-slate-900">
       <Navbar />
 
       <section id="home" className="mx-auto max-w-7xl px-5 pb-16 pt-12 sm:px-8 sm:pt-16">
