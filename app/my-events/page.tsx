@@ -27,7 +27,7 @@ export default function MyEventsPage() {
   const savedEvents = events.filter((event) => savedEventIds.includes(event.id));
 
   return (
-    <main className="min-h-screen bg-stone-50 text-slate-900">
+    <main className="min-h-screen bg-slate-50 text-slate-900">
       <Navbar />
 
       <section className="mx-auto max-w-7xl px-5 pb-16 pt-12 sm:px-8 sm:pt-16">
