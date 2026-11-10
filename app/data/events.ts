@@ -98,7 +98,7 @@ export const events: CampusEvent[] = [
   },
   {
     id: "inter-department-debate",
-    title: "Inter department debate competition",
+    title: "Inter-department debate competition",
     category: "Social",
     date: "2026-12-10",
     time: "11:00 AM",

@@ -8,10 +8,10 @@ type EventDetailsPageProps = {
 };
 
 const categoryStyles: Record<EventCategory, string> = {
-  Tech: "bg-teal-950 text-teal-200 ring-teal-800",
-  Sports: "bg-teal-950 text-teal-200 ring-teal-800",
-  Faith: "bg-teal-950 text-teal-200 ring-teal-800",
-  Social: "bg-amber-950 text-amber-300 ring-amber-800",
+  Tech: "bg-amber-500 text-neutral-950 ring-amber-400",
+  Sports: "bg-amber-500 text-neutral-950 ring-amber-400",
+  Faith: "bg-amber-500 text-neutral-950 ring-amber-400",
+  Social: "bg-amber-500 text-neutral-950 ring-amber-400",
 };
 
 function formatEventDate(date: string) {
@@ -82,8 +82,8 @@ async function EventDetailsContent({ params }: EventDetailsPageProps) {
           Back to Events
         </Link>
 
-        <article className="mt-5 overflow-hidden rounded-3xl border border-neutral-800 bg-neutral-900 shadow-sm shadow-black/30">
-          <div className="h-56 bg-neutral-800 sm:h-80 lg:h-[26rem]">
+        <article className="mt-5 overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-sm shadow-black/30">
+          <div className="h-56 bg-neutral-200 sm:h-80 lg:h-[26rem]">
             <img src={event.image} alt={event.title} className="h-full w-full object-cover" />
           </div>
 
@@ -93,30 +93,30 @@ async function EventDetailsContent({ params }: EventDetailsPageProps) {
             >
               {event.category}
             </span>
-            <h1 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+            <h1 className="mt-4 text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl">
               {event.title}
             </h1>
 
-            <dl className="mt-7 grid gap-5 border-y border-neutral-800 py-6 sm:grid-cols-3">
+            <dl className="mt-7 grid gap-5 border-y border-neutral-200 py-6 sm:grid-cols-3">
               <div>
-                <dt className="text-xs font-semibold uppercase tracking-wide text-amber-500">Date</dt>
-                <dd className="mt-1.5 font-medium text-neutral-200">{formatEventDate(event.date)}</dd>
+                <dt className="text-xs font-semibold uppercase tracking-wide text-neutral-600">Date</dt>
+                <dd className="mt-1.5 font-medium text-neutral-800">{formatEventDate(event.date)}</dd>
               </div>
               <div>
-                <dt className="text-xs font-semibold uppercase tracking-wide text-amber-500">Time</dt>
-                <dd className="mt-1.5 font-medium text-neutral-200">{event.time}</dd>
+                <dt className="text-xs font-semibold uppercase tracking-wide text-neutral-600">Time</dt>
+                <dd className="mt-1.5 font-medium text-neutral-800">{event.time}</dd>
               </div>
               <div>
-                <dt className="text-xs font-semibold uppercase tracking-wide text-amber-500">Venue</dt>
-                <dd className="mt-1.5 font-medium text-neutral-200">{event.venue}</dd>
+                <dt className="text-xs font-semibold uppercase tracking-wide text-neutral-600">Venue</dt>
+                <dd className="mt-1.5 font-medium text-neutral-800">{event.venue}</dd>
               </div>
             </dl>
 
             <EventCountdown date={event.date} time={event.time} />
 
             <section className="mt-7">
-              <h2 className="text-lg font-bold text-white">About this event</h2>
-              <p className="mt-3 max-w-3xl whitespace-pre-line leading-7 text-neutral-400">
+              <h2 className="text-lg font-bold text-neutral-900">About this event</h2>
+              <p className="mt-3 max-w-3xl whitespace-pre-line leading-7 text-neutral-600">
                 {event.description}
               </p>
             </section>

@@ -56,9 +56,9 @@ export default function EventCountdown({ date, time }: EventCountdownProps) {
   }, [date, time]);
 
   return (
-    <div className="mt-7 rounded-2xl bg-teal-950 px-5 py-4 ring-1 ring-inset ring-teal-800">
+    <div className="mt-7 rounded-2xl bg-neutral-900 px-5 py-4 ring-1 ring-inset ring-teal-700">
       <p className="text-sm font-semibold text-white">Event countdown</p>
-      <p role="status" className="mt-1 text-base font-medium text-teal-200">
+      <p role="status" className="mt-1 text-base font-medium text-neutral-300">
         {remainingTime === null
           ? "Calculating time remaining..."
           : remainingTime === 0

@@ -7,10 +7,10 @@ import Navbar from "./components/Navbar";
 import { useSavedEvents } from "./context/SavedEventsContext";
 
 const categoryStyles: Record<EventCategory, string> = {
-  Tech: "bg-teal-950 text-teal-200 ring-teal-800",
-  Sports: "bg-teal-950 text-teal-200 ring-teal-800",
-  Faith: "bg-teal-950 text-teal-200 ring-teal-800",
-  Social: "bg-amber-950 text-amber-300 ring-amber-800",
+  Tech: "bg-amber-500 text-neutral-950 ring-amber-400",
+  Sports: "bg-amber-500 text-neutral-950 ring-amber-400",
+  Faith: "bg-amber-500 text-neutral-950 ring-amber-400",
+  Social: "bg-amber-500 text-neutral-950 ring-amber-400",
 };
 
 const categoryFilters = ["All", "Tech", "Sports", "Faith", "Social"] as const;
@@ -134,13 +134,13 @@ export default function Home() {
           {filteredEvents.map((event) => (
             <article
               key={event.id}
-              className="group overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900 shadow-sm shadow-black/20 transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/50"
+              className="group overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm shadow-black/20 transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/50"
             >
             <Link
               href={`/events/${event.id}`}
               className="block"
             >
-              <div className="relative h-48 overflow-hidden bg-neutral-800">
+              <div className="relative h-48 overflow-hidden bg-neutral-200">
                 <img
                   src={event.image}
                   alt={event.title}
@@ -154,10 +154,10 @@ export default function Home() {
               </div>
 
               <div className="p-5">
-                <h3 className="min-h-14 text-lg font-bold leading-6 text-white transition-colors group-hover:text-teal-300">
+                <h3 className="min-h-14 text-lg font-bold leading-6 text-neutral-900 transition-colors group-hover:text-teal-700">
                   {event.title}
                 </h3>
-                <div className="mt-4 space-y-2.5 text-sm text-neutral-400">
+                <div className="mt-4 space-y-2.5 text-sm text-neutral-600">
                   <p className="flex items-center gap-2.5">
                     <span aria-hidden="true" className="w-5 text-center text-teal-700">◷</span>
                     <span>{formatEventDate(event.date)} <span className="text-neutral-600">·</span> {event.time}</span>
@@ -176,8 +176,8 @@ export default function Home() {
                   onClick={() => toggleSavedEvent(event.id)}
                   className={`w-full rounded-lg px-4 py-2.5 text-sm font-semibold transition-colors ${
                     isEventSaved(event.id)
-                      ? "bg-teal-700 text-white hover:bg-teal-800"
-                      : "bg-neutral-800 text-neutral-200 hover:bg-neutral-700 hover:text-white"
+                      ? "bg-teal-800 text-white hover:bg-teal-900"
+                      : "bg-teal-700 text-white hover:bg-teal-800"
                   }`}
                 >
                   {isEventSaved(event.id) ? "Unsave Event" : "Save Event"}
