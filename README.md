@@ -1,36 +1,24 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Campus Event Board 
 
-## Getting Started
+A web application built to help students discover and keep track of campus events. Students can explore events, search by title, filter by category, view event details, save their favourite events, and see countdowns to upcoming events.
 
-First, run the development server:
+This project was developed as part of my learning journey in web development.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+* Browse Events: View different campus events displayed in organised event cards.
+* Search Events: Search for events by their titles.
+* Category Filtering: Filter events by Tech, Sports, Faith, and Social categories.
+* Date Sorting: Arrange events by date.
+* Event Details: View more information about each event on its individual details page.
+* Save Events: Save and unsave events you are interested in.
+* My Events: View all your saved events in one place.
+* Event Countdown: See how much time is left before an upcoming event.
+* Responsive Design: A layout designed to work across different screen sizes.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Technologies Used
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+* Next.js – React framework used to build the application.
+* React – Used to build reusable UI components and manage application state.
+* TypeScript – Provides type safety and helps organise the code.
+* Tailwind CSS – Used for styling and responsive layouts.

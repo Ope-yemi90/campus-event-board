@@ -14,7 +14,7 @@ export type CampusEvent = {
 export const events: CampusEvent[] = [
   {
     id: "campus-tech-summit-2026",
-    title: "campus Tech & Innovation Workshop",
+    title: "Campus Tech & Innovation Workshop",
     category: "Tech",
     date: "2026-11-18",
     time: "10:00 AM",
